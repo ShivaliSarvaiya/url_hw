@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Site parameters</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .box {
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.85);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Live URL Designer</h1>
+        <p>
+            Change the design by editing the URL.
+        </p>
+        <p>
+            Example:<br>
+            <code>?bg=coral&font=courier&size=30px</code>
+        </p>
+    </div>
+
+    <script>
+       
+        const params = new URLSearchParams(window.location.search);
+
+        const bg = params.get("bg");
+        const font = params.get("font");
+        const size = params.get("size");
+
+       
+        if (bg) {
+            document.body.style.backgroundColor = bg;
+        }
+
+        if (font) {
+            document.body.style.fontFamily = font;
+        }
+
+        if (size) {
+            document.body.style.fontSize = size;
+        }
+    </script>
+
+</body>
+</html>
